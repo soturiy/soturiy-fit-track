@@ -38,9 +38,9 @@ const menuItems = [
 
 const AppSidebar = () => {
   return (
-    <Sidebar>
+    <Sidebar variant="floating" collapsible="offcanvas">
       <SidebarHeader className="p-4">
-        <h1 className="text-2xl font-bold text-soturiy-brown">SoturiyFit</h1>
+        <h1 className="text-xl font-bold text-soturiy-brown">SoturiyFit</h1>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -48,7 +48,7 @@ const AppSidebar = () => {
             <SidebarMenu>
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title} className="flex-1">
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton asChild tooltip={item.title}>
                     <NavLink
                       to={item.path}
                       className={({ isActive }) =>
