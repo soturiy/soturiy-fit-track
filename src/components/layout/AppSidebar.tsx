@@ -2,7 +2,6 @@
 import { 
   Sidebar, 
   SidebarContent,
-  SidebarHeader,
   SidebarGroup,
   SidebarGroupContent,
   SidebarMenu,
@@ -39,29 +38,26 @@ const menuItems = [
 const AppSidebar = () => {
   return (
     <Sidebar variant="floating" collapsible="offcanvas">
-      <SidebarHeader className="p-4">
-        <h1 className="text-xl font-bold text-soturiy-brown">SoturiyFit</h1>
-      </SidebarHeader>
-      <SidebarContent>
+      <SidebarContent className="pt-8">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {menuItems.map((item) => (
-                <SidebarMenuItem key={item.title} className="flex-1">
+                <SidebarMenuItem key={item.title} className="mb-4">
                   <SidebarMenuButton asChild tooltip={item.title}>
                     <NavLink
                       to={item.path}
                       className={({ isActive }) =>
                         cn(
-                          "flex items-center gap-3 p-2 rounded-md transition-colors",
+                          "flex flex-col items-center justify-center py-6 rounded-md transition-colors",
                           isActive
                             ? "bg-soturiy-brown text-white"
                             : "hover:bg-soturiy-beige/50"
                         )
                       }
                     >
-                      <item.icon size={20} />
-                      <span>{item.title}</span>
+                      <item.icon size={36} className="mb-2" />
+                      <span className="text-xs font-medium">{item.title}</span>
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
