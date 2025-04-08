@@ -61,7 +61,7 @@ const AppSidebar = () => {
                           item.color,
                           isActive
                             ? "text-white"
-                            : `text-soturiy-dark-brown ${item.hoverColor}`
+                            : "text-white"
                         )
                       }
                     >
